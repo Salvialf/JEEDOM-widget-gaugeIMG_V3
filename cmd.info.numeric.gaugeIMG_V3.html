@@ -19,32 +19,32 @@ du widget dashboard.info.numeric.gaugeIMG
 		</div>
 		<div id="gauge#id#" class=" indicator"></div>
 <script> 
-  var valMin = is_numeric('#mini#') ? parseFloat('#mini#'):#minValue#;
-  var valMax = is_numeric('#maxi#') ? parseFloat('#maxi#'):#maxValue#;
+  var valMin#id# = is_numeric('#mini#') ? parseFloat('#mini#'):#minValue#;
+  var valMax#id# = is_numeric('#maxi#') ? parseFloat('#maxi#'):#maxValue#;
   
-    var midvalue = Math.round((valMax + valMin) / 2);
-    var quartvalue = Math.round((valMin + midvalue) / 2);
-    var troisquartvalue = Math.round((midvalue + valMax) / 2);
-    $('#minvalue#id#').text(valMin);
-    $('#midvalue#id#').text(midvalue);
-    $('#quartvalue#id#').text(quartvalue);
-    $('#troisquartvalue#id#').text(troisquartvalue);
-    $('#maxvalue#id#').text(valMax);
+    var midvalue#id# = Math.round((valMax#id# + valMin#id#) / 2);
+    var quartvalue#id# = Math.round((valMin#id# + midvalue#id#) / 2);
+    var troisquartvalue#id# = Math.round((midvalue#id# + valMax#id#) / 2);
+    $('#minvalue#id#').text(valMin#id#);
+    $('#midvalue#id#').text(midvalue#id#);
+    $('#quartvalue#id#').text(quartvalue#id#);
+    $('#troisquartvalue#id#').text(troisquartvalue#id#);
+    $('#maxvalue#id#').text(valMax#id#);
   
     jeedom.cmd.update['#id#'] = function(_options){     
-    var val = _options.display_value;
-    var plage = valMax - valMin;
-    if (valMin < valMax)  {
-      if (val < valMin) angle = -10;
-      else if (val > valMax) angle = 234;
-      else angle = (val - valMin) * 224 / plage;
+    var val#id# = _options.display_value;
+    var plage#id# = valMax#id# - valMin#id#;
+    var angle#id#;
+    if (valMin#id# < valMax#id#)  {
+      if (val#id# < valMin#id#) angle#id# = -10;
+      else if (val#id# > valMax#id#) angle#id# = 234;
+      else angle#id# = (val#id# - valMin#id#) * 224 / plage#id#;
     } else {
-      if (val < valMax) angle = 234;
-      else if (val > valMin) angle = -10;
-      else angle = (val - valMin) * 224 / plage;
+      if (val#id# < valMax#id#) angle#id# = 234;
+      else if (val#id# > valMin#id#) angle#id# = -10;
+      else angle#id# = (val#id# - valMin#id#) * 224 / plage#id#;
     }
-    $('#gauge#id#.indicator').css( {'-webkit-transform':'rotate('+angle+'deg)','-moz-transform':'rotate('+angle+'deg)','-ms-transform':'rotate('+angle+'deg)','-o-transform':'rotate('+angle+'deg)','transform':'rotate('+angle+'deg)'});
-    $('.cmd[data-cmd_id=#id#] .state_gauge#id#').text(_options.display_value);
+    $('#gauge#id#.indicator').css( {'-webkit-transform':'rotate('+angle#id#+'deg)','-moz-transform':'rotate('+angle#id#+'deg)','-ms-transform':'rotate('+angle#id#+'deg)','-o-transform':'rotate('+angle#id#+'deg)','transform':'rotate('+angle#id#+'deg)'});$('.cmd[data-cmd_id=#id#] .state_gauge#id#').text(_options.display_value);
     $('.cmd[data-cmd_uid=#uid#]').attr('title','Valeur du '+_options.valueDate+', collectée le '+_options.collectDate)
     }
     jeedom.cmd.update['#id#']({display_value:'#state#',valueDate:'#valueDate#',collectDate:'#collectDate#',alertLevel:'#alertLevel#'});
