@@ -8,6 +8,7 @@
 ** 9 couleurs: bleue, verte, jaune, orange, rouge, rose, mauve, turquoise, blanche **
  change = change la couleur de la jauge selon la valeur (exemple: 0_25:verte,25_75:orange,75_100:rouge)
  petit = taille 80px*80px (1 | 120px*120px par défaut)
+ moyen = taille 160px*160px (1 | 120px*120px par défaut)
  time = affiche la durée (duree | date | heure | désactivé par défaut)
  ########### by @SALVIALF ;) ############# -->
   
@@ -110,6 +111,19 @@
       cmd.find('#maxvalue').css({'font-size':'0.5em','right':'15px','top':'43px'});
       cmd.find('#state_gauge').css({'font-size':'17px','top':'54px'});
       cmd.find('#unite_gauge').css({'font-size':'6px','top':'44px'});
+    }
+	
+	if ('#moyen#' == 1) {
+      let cmd = $('.cmd[data-cmd_id=#id#]');
+      cmd.find('#IMGgauge').css({'height':'160px','width':'160px'});
+      cmd.find('#indicator').css({'height':'96px','width':'96px','left':'32px','top':'30px'});
+      cmd.find('#minvalue').css({'font-size':'1em','left':'30px','top':'86px'});
+      cmd.find('#quartvalue').css({'font-size':'1em','left':'34px','top':'48px'});
+      cmd.find('#midvalue').css({'font-size':'1em','top':'20px'});
+      cmd.find('#troisquartvalue').css({'font-size':'1em','right':'34px','top':'48px'});
+      cmd.find('#maxvalue').css({'font-size':'1em','right':'30px','top':'86px'});
+      cmd.find('#state_gauge').css({'font-size':'34px','top':'113px'});
+      cmd.find('#unite_gauge').css({'font-size':'12px','top':'88px'});
     }
 </script>
 <style>
